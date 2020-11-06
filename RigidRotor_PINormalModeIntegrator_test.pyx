@@ -864,7 +864,7 @@ cdef class RigidRotor_PINormalModeIntegrator(MMTK.PIIntegratorSupport.PIIntegrat
                             if (dens_old>(1.0e-10)):
                                 rd=dens_new/dens_old
     	         
-                            rd*= exp(-(beta/P)*(pot_new-pot_old))
+                            rd*= exp(-1.0*beta*(pot_new-pot_old))
     	         
                             accept=False
                             if (rd>1.0):
